@@ -1,6 +1,6 @@
 # web_pro
 
-you can git clone java_server program to set service;
+you can download java_server program at [gitUrl]("https://github.com/izhaowang/java_serve.git");
 
 
 ## Recommended IDE Setup
