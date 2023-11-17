@@ -11,7 +11,6 @@ const instance = axios.create({ baseURL })
 
 instance.interceptors.request.use(
     config => {//请求钱
-        // 
         const tokenStore = useTokenStore();
         if (tokenStore.token) {
             // 由token 的话就添加请求头

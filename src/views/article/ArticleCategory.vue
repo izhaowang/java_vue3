@@ -38,7 +38,7 @@ const addArticleCategory = async () => {
   //隐藏弹窗
   dialogVisible.value = false;
   //再次访问后台接口，查询所有分类
-  getArticleList();
+  getArticleCatagoryList();
 };
 const handleEdit = async (index: number, row: Category) => {
   dialogVisible.value = true;
@@ -58,7 +58,7 @@ const setEditArticleCategory = async () => {
   //隐藏弹窗
   dialogVisible.value = false;
   //再次访问后台接口，查询所有分类
-  getArticleList();
+  getArticleCatagoryList();
 };
 // 添加分类要清空catagoryModel数据
 const clearCategoryData = () => {
@@ -75,13 +75,15 @@ const setDeleatAtricile = (index, row) => {
   })
     .then(async () => {
       // confirm
+      console.log(row);
+
       // 调用删除分类接口
-      let res = await deleatAtricile(row.id);
+      let res = await deleatAtricile({ id: row.id });
       ElMessage({
         type: "success",
         message: "删除成功",
       });
-      getArticleList();
+      getArticleCatagoryList();
     })
     .catch(() => {
       ElMessage({

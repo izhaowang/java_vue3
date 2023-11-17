@@ -7,6 +7,7 @@ import ArticleManage from '@/views/article/ArticleManage.vue'
 import UserAvatar from '@/views/user/UserAvatar.vue'
 import UserInfo from '@/views/user/UserInfo.vue'
 import UserResetPassword from '@/views/user/UserResetPassword.vue'
+import Page404 from "@/views/page404.vue"
 const routes = [
     {
         path: '/login',
@@ -38,6 +39,10 @@ const routes = [
             }
         ],
         redirect: '/article/category'
+    },
+    {
+        path: '/:catchAll(.*)',
+        component: Page404
     }
 ]
 
